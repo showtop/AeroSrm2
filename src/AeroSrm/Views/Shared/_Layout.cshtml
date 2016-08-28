@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>@ViewData["Title"] - AeroSrm</title>
+
+       <environment names="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+            <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+            <link rel="stylesheet" href="~/css/simple-sidebar.css"/>
+        </environment>
+        <environment names="Staging,Production">
+            <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"
+                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+            <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/css/simple-sidebar.css" asp-append-version="true" />
+        </environment>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            Aero SRM
+                        </a>
+                    </li>
+                    <li><a asp-controller="Home" asp-action="Index">Dashboard</a><hr /></li>
+                    <li><a asp-controller="Suppliers" asp-action="Index">Suppliers</a><hr /></li>
+                    <li><a asp-controller="Product" asp-action="Index">Products</a><hr /></li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+                                &#9776;
+                            </a>
+                            @RenderBody()
+                            <hr />
+                            <footer>
+                                <p>&copy; @DateTime.Now.Year - AeroSrm</p>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+            <environment names="Development">
+                <script src="~/lib/jquery/dist/jquery.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+                <script src="~/js/site.js" asp-append-version="true"></script>
+            </environment>
+            <environment names="Staging,Production">
+                <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
+                        asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                        asp-fallback-test="window.jQuery">
+                </script>
+                <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"
+                        asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                        asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+                </script>
+                <script src="~/js/site.min.js" asp-append-version="true"></script>
+            </environment>
+
+            <!-- Menu Toggle Script -->
+            <script>
+                $("#menu-toggle").click(function (e) {
+                    e.preventDefault();
+                    $("#wrapper").toggleClass("toggled");
+                });
+            </script>
+
+            @RenderSection("scripts", required: false)
+</body>
+</html>

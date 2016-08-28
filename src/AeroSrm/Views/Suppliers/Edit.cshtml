@@ -1,0 +1,144 @@
+@model AeroSrm.Models.Supplier
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Supplier</h4>
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="SupplierID" />
+        <div class="form-group">
+            <label asp-for="BankAccountNo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BankAccountNo" class="form-control" />
+                <span asp-validation-for="BankAccountNo" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BankBIC" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BankBIC" class="form-control" />
+                <span asp-validation-for="BankBIC" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BankIBAN" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BankIBAN" class="form-control" />
+                <span asp-validation-for="BankIBAN" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BankName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BankName" class="form-control" />
+                <span asp-validation-for="BankName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BankSortCode" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BankSortCode" class="form-control" />
+                <span asp-validation-for="BankSortCode" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BillingCurrency" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BillingCurrency" class="form-control" />
+                <span asp-validation-for="BillingCurrency" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ContactName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ContactName" class="form-control" />
+                <span asp-validation-for="ContactName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Mobile" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifiedDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ModifiedDate" class="form-control" />
+                <span asp-validation-for="ModifiedDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Paypal" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Paypal" class="form-control" />
+                <span asp-validation-for="Paypal" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Skype" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Skype" class="form-control" />
+                <span asp-validation-for="Skype" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SupplierName" class="form-control" />
+                <span asp-validation-for="SupplierName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SupplierType" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SupplierType" class="form-control" />
+                <span asp-validation-for="SupplierType" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<div class="col-lg-6">
+    @Html.DisplayNameFor(model => model.Addresses)
+    <hr />
+    @foreach (var item in Model.Addresses)
+            {
+        <table>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddressLine1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddressLine2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddressLine3)
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+
+
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

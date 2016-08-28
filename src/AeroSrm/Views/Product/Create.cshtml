@@ -1,0 +1,94 @@
+@model AeroSrm.Models.Product
+
+@{
+    ViewData["Title"] = "New Product";
+}
+
+<h2>New Product</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ProductName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Colour" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Colour" class="form-control" />
+                <span asp-validation-for="Colour" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Size" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Size" class="form-control" />
+                <span asp-validation-for="Size" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SizeUnitMeasure" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SizeUnitMeasure" class="form-control" />
+                <span asp-validation-for="SizeUnitMeasure" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ListPrice" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ListPrice" class="form-control" />
+                <span asp-validation-for="ListPrice" class="text-danger" />
+            </div>
+        </div>
+        <hr/>
+        <div class="form-group">
+            <label asp-for="CurrentStockLevel" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CurrentStockLevel" class="form-control" />
+                <span asp-validation-for="CurrentStockLevel" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SafeStockLevel" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SafeStockLevel" class="form-control" />
+                <span asp-validation-for="SafeStockLevel" class="text-danger" />
+            </div>
+        </div><hr />
+        <div class="form-group">
+            <label asp-for="DiscontinuedDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DiscontinuedDate" class="form-control" />
+                <span asp-validation-for="DiscontinuedDate" class="text-danger" />
+            </div>
+        </div>
+        <hr/>
+        <div class="form-group">
+            <label asp-for="ModifiedDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ModifiedDate" class="form-control" />
+                <span asp-validation-for="ModifiedDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

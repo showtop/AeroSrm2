@@ -1,0 +1,101 @@
+@model AeroSrm.Models.Address
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>@ViewBag.SupplierName</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>New Address</h4>
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="AddressType" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AddressType" class="form-control" />
+                <span asp-validation-for="AddressType" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AddressLine1" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AddressLine1" class="form-control" />
+                <span asp-validation-for="AddressLine1" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AddressLine2" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AddressLine2" class="form-control" />
+                <span asp-validation-for="AddressLine2" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AddressLine3" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AddressLine3" class="form-control" />
+                <span asp-validation-for="AddressLine3" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Town" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Town" class="form-control" />
+                <span asp-validation-for="Town" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="City" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Region" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Region" class="form-control" />
+                <span asp-validation-for="Region" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Country" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PostalCode" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PostalCode" class="form-control" />
+                <span asp-validation-for="PostalCode" class="text-danger" />
+            </div>
+        </div><hr/>
+        <div class="form-group">
+            <label asp-for="ModifiedDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ModifiedDate" class="form-control" />
+                <span asp-validation-for="ModifiedDate" class="text-danger" />
+            </div>
+        </div>
+        <input type="hidden" asp-for="SupplierId" value="@ViewContext.RouteData.Values["id"]" />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -1,0 +1,82 @@
+@model AeroSrm.Models.Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Colour)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Colour)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentStockLevel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CurrentStockLevel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DiscontinuedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DiscontinuedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ListPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ListPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReorderPoint)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReorderPoint)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SafeStockLevel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SafeStockLevel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeUnitMeasure)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SizeUnitMeasure)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,104 @@
+@model IEnumerable<AeroSrm.Models.Supplier>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BankAccountNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankBIC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankIBAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankSortCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillingCurrency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paypal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Skype)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierType)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankAccountNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankBIC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankIBAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankSortCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillingCurrency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paypal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Skype)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierType)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.SupplierID">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.SupplierID">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.SupplierID">Delete</a>
+        </td>
+    </tr>
+}
+</table>
